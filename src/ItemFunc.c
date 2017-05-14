@@ -25,6 +25,9 @@ void InputItemData(void)
 
 	printf("상품갯수 입력 : ");
 	gets(pdata->number);
+	
+	fputs("상품가격 입력 : ");
+	gets(pdata->cost);
 
 	ItemList[numOfData] = pdata;
 	numOfData++;
@@ -75,6 +78,7 @@ void ChangeItemData(void)
 	int i;
 	char searchName[NAME_LEN];
 	char newItemNumber[NUM_LEN];
+	char newItemCost[COST_LEN];
 
 	int idxOfMatchingData[LIST_NUM];
 	int matchedCount = 0;
@@ -118,6 +122,11 @@ void ChangeItemData(void)
 	fputs("변경할 갯수는?", stdout);
 	gets(newItemNumber);
 	strcpy(ItemList[delIdx]->number, newItemNumber);
+	
+	fputs("변경할 가격은?", stdout);
+	gets(newItemCost);
+	strcpy(ItemList[delIdx]->cost, newItemCost);
+	
 
 	StoreDataToFileInStruct();
 	puts("변경 완료");
