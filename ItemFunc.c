@@ -5,7 +5,6 @@
 
 #define LIST_NUM 50
 
-int numOfData=0;//제품의 갯수
 ItemData* ItemList[LIST_NUM];//구조체 ItemData로 아이템을 구성
 
 void InputItemData(void)
