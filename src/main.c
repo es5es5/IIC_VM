@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-#include"game.h"
 #include"common.h"
 #include"screenOut.h"
 #include"ItemData.h"
