@@ -15,5 +15,5 @@ int ChoiceOddEven(void);
 void resultCard(void);
 void resultOddEven(void);
 void write(void);
-
+//좀
 #endif /* SRC_GAME_H_ */
