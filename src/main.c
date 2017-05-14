@@ -34,8 +34,6 @@ int main(int argc, char *argv[])
 
 void Coininput(int *coin)																//코인입력화면
 {
-	printf("몇개의 코인을 넣을신건가요??\n");
-	scanf("%d", coin);
 	printf("현재 코인 : %d\n", coin);
 }
 
