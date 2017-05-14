@@ -10,7 +10,7 @@
 int main(int argc, char *argv[]);
 void Coinscreen(int coin);
 void Startscreen();
-void Choicemenu(int *number);
+void Choicemenu(int *number, int coin);
 void Game();
 void PrintList();
 void ListToDo();
@@ -64,13 +64,14 @@ void Startscreen()																	//초기하면 출력
 	puts("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 }
 
-void Choicemenu(int *number)
+void Choicemenu(int *number, int coin)
 {
 	while(1)
 	{
 		printf("메뉴를 선택해 주세요\n");
 		scanf("%d",&number);
 		system("cls");
+		printf("현재 코인 : %d", coin);
 		if(number == 1)
 		{
 			Game();
