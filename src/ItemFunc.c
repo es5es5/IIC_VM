@@ -24,10 +24,10 @@ void InputItemData(void)
 	gets(pdata->name);
 
 	printf("상품갯수 입력 : ");
-	gets(pdata->number);
-	
-	fputs("상품가격 입력 : ");
-	gets(pdata->cost);
+	scanf("%d", &pdata->number);
+
+	printf("코인갯수 입력 : ");
+	scanf("%d", &pdata->coin);
 
 	ItemList[numOfData] = pdata;
 	numOfData++;
@@ -77,8 +77,8 @@ void ChangeItemData(void)
 {
 	int i;
 	char searchName[NAME_LEN];
-	char newItemNumber[NUM_LEN];
-	char newItemCost[COST_LEN];
+	int newItemNumber=0;
+	int newItemCoin=0;
 
 	int idxOfMatchingData[LIST_NUM];
 	int matchedCount = 0;
@@ -120,13 +120,12 @@ void ChangeItemData(void)
 		delIdx=idxOfMatchingData[selection-1];
 	}
 	fputs("변경할 갯수는?", stdout);
-	gets(newItemNumber);
-	strcpy(ItemList[delIdx]->number, newItemNumber);
-	
-	fputs("변경할 가격은?", stdout);
-	gets(newItemCost);
-	strcpy(ItemList[delIdx]->cost, newItemCost);
-	
+	scanf("%d", &newItemNumber);
+	*ItemList[delIdx]->number = newItemNumber;
+
+	fputs("변경할 코인 갯수는?", stdout);
+	scanf("%d", &newItemCoin);
+	*ItemList[delIdx]->coin = newItemCoin;
 
 	StoreDataToFileInStruct();
 	puts("변경 완료");
@@ -137,7 +136,7 @@ void StoreDataToFileInStruct(void)
 {
 	int i;
 
-	FILE * fp = fopen("ItemDataStruct.dat", "wb");
+	FILE * fp = fopen("Record.dat", "wb");
 
 	fwrite(&numOfData, sizeof(int), 1, fp);
 
@@ -151,7 +150,7 @@ void StoreDataToFileInStruct(void)
 void LoadDataFromFileInStruct(void)
 {
 	int i;
-	FILE * fp = fopen("ItemDataStruct.dat", "rb");
+	FILE * fp = fopen("Record.dat", "rb");
 	if(fp == NULL)
 		return;
 

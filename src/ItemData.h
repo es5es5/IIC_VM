@@ -3,12 +3,13 @@
 
 #define NAME_LEN 30
 #define NUM_LEN 30
-#define COST_LEN 30
+#define COIN_LEN  30
 typedef struct __ItemData
 {
 	char name[NAME_LEN];
-	char number[NUM_LEN];
-	char cost[COST_LEN];
+	int number[NUM_LEN];
+	int coin[COIN_LEN];
+	
 }ItemData;
 
 #endif
