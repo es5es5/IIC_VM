@@ -90,7 +90,24 @@ void Choicemenu(int *number)
 }
 void game()
 {
+	int number;
+	printf(1. ÀÎµð¾ð Æ÷Ä¿, 2. È¦Â¦);
+	scanf("%d", &number);
 
+	if(number == 1)
+	{
+		CardCom();
+		ChoiceCard();
+		resultCard();
+		write();
+	}
+	else if(number == 2)
+	{
+		resultOddEven();
+		ChoiceOddEven();
+		resultOddEven();
+		write();
+	}
 }
 
 void PrintList ()
