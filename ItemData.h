@@ -2,14 +2,15 @@
 #define __ITEMDATA_H__
 
 #define NAME_LEN 30
-#define NUM_LEN 30
-#define COIN_LEN  30
+
 typedef struct __ItemData
 {
 	char name[NAME_LEN];
-	int number[NUM_LEN];
-	int coin[COIN_LEN];
+	int number;
+	int coin;
 	
 }ItemData;
+
+int numOfData=0;//Á¦Ç°ÀÇ °¹¼ö
 
 #endif
